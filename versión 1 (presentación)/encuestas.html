@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encuestas</title>
+</head>
+<link rel="icon" type="image/png" href="image.png">
+<body>
+    <!--importacion de los estilos css :D-->
+    <link rel="stylesheet" href="Style base.css">
+
+    <!--boton de cambio de estilo o de tema-->
+    <button class="boton-tema" onclick="toggleTema()">cambiar tema</button>
+    <script src="Scrip SenaQuest.js"></script>
+
+    <section>
+        <div style="text-align: center;">
+            <a href="pagina principal.html">
+                <img src="image.png" alt="logo" height="90px">
+            </a>
+        </div>
+        <h1 style="text-align: center;">Encuesta de Evaluación</h1>
+        <form action="/submit" method="POST">
+            <div class="form">
+                <label>1.¿Sigue un plan o estructura clara durante las sesiones?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="plan" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="plan" value="A veces"> A veces</label>
+                    <label><input type="radio" name="plan" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>2.¿Explica los conceptos de manera clara y comprensible?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="claridad" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="claridad" value="A veces"> A veces</label>
+                    <label><input type="radio" name="claridad" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>3.¿Responde las preguntas de los estudiantes de manera satisfactoria?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="respuestas" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="respuestas" value="A veces"> A veces</label>
+                    <label><input type="radio" name="respuestas" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>4.¿Brinda retroalimentación oportuna sobre actividades y evaluaciones?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="retroalimentacion" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="retroalimentacion" value="A veces"> A veces</label>
+                    <label><input type="radio" name="retroalimentacion" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>5.¿Utiliza recursos tecnológicos o audiovisuales en sus explicaciones?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="recursos" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="recursos" value="A veces"> A veces</label>
+                    <label><input type="radio" name="recursos" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>6.¿El ritmo de la clase es adecuado para cubrir todos los temas del programa?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="ritmo" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="ritmo" value="A veces"> A veces</label>
+                    <label><input type="radio" name="ritmo" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>7.¿Permite suficiente tiempo para preguntas y aclaraciones?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="tiempo_preguntas" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="tiempo_preguntas" value="A veces"> A veces</label>
+                    <label><input type="radio" name="tiempo_preguntas" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>8.¿Fomenta la participación de todos los estudiantes, sin exclusión?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="participacion" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="participacion" value="A veces"> A veces</label>
+                    <label><input type="radio" name="participacion" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <div class="form">
+                <label>9.¿Hace sugerencias para mejorar el desempeño de los estudiantes?</label>
+                <div class="tarjeta">
+                    <label><input type="radio" name="sugerencias" value="Siempre" required> Siempre</label>
+                    <label><input type="radio" name="sugerencias" value="A veces"> A veces</label>
+                    <label><input type="radio" name="sugerencias" value="Nunca"> Nunca</label>
+                </div>
+            </div>
+            <button type="submit" class="button">Enviar Encuesta</button>
+        </form>
+    </section>
