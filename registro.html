@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="icon" type="image/png" href="image.png">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 3px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Cambio para evitar estar centrado verticalmente */
+            height: 100%;
+            min-height: 100vh;
+            overflow-y: auto; /* Permite desplazamiento si es necesario */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem; /* Reducido el tamaño */
+            color: #ffffff;
+        }
+
+        /* Contenedor principal del formulario */
+        .form-container {
+            background-color: white;
+            padding: 40px; /* Reducido el padding */
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px; /* Reducido el ancho máximo */
+            margin-top: 50px; /* Separación desde la parte superior */
+        }
+
+        /* Estilos del formulario */
+        .form-group {
+            margin-bottom: 12px; /* Reducido el margen */
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            color: #dadada;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px; /* Reducido el padding */
+            font-size: 0.9rem; /* Reducido el tamaño de la fuente */
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 10px; /* Reducido el padding */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem; /* Reducido el tamaño de la fuente */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .terms {
+            font-size: 0.85rem; /* Reducido el tamaño de la fuente */
+            color: #777;
+        }
+
+        .terms a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para la imagen */
+        .logo {
+            text-align: center;
+            margin-bottom: 15px; /* Reducido el espacio */
+        }
+
+        /* Tema oscuro */
+        body.tema-oscuro {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.tema-oscuro .form-container {
+            background-color: #333;
+        }
+
+        body.tema-oscuro .btn-submit {
+            background-color: #28a745;
+        }
+
+        body.tema-oscuro .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        body.tema-oscuro .terms a {
+            color: #66c2ff;
+        }
+    </style>
+</head>
+<body class="tema-oscuro">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+
+
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Crear una Cuenta</h2>
+      <form action="crear-cuenta.php" method="POST" class="row g-3">
+    
+        <div class="col-md-6">
+          <label for="tipo_documento" class="form-label">Tipo de Documento</label>
+          <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" maxlength="2" required placeholder="CC, TI, CE...">
+        </div>
+    
+        <div class="col-md-6">
+          <label for="documento" class="form-label">Número de Documento</label>
+          <input type="number" class="form-control" id="documento" name="documento" required>
+        </div>
+    
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+    
+        <div class="col-md-6">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" required>
+        </div>
+    
+        <div class="col-md-6">
+          <label for="correo" class="form-label">Correo Electrónico</label>
+          <input type="email" name="correo" required
+       oninvalid="this.setCustomValidity('Por favor ingresa un correo válido con @')"
+       oninput="this.setCustomValidity('')">
+
+        </div>
+    
+        <div class="col-md-6">
+          <label for="contra" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contra" name="contra" required>
+        </div>
+    
+        <div class="col-md-6">
+            <label for="celular">Celular:</label>
+            <input type="text" name="celular" id="celular" maxlength="10" pattern="\d{10}" required
+                   oninvalid="this.setCustomValidity('Ingresa un número de celular de máximo 10 dígitos')"
+                   oninput="this.setCustomValidity('')">
+        </div>
+    
+        <div class="col-md-6">
+          <label for="rol" class="form-label">Rol</label>
+          <select class="form-select" id="rol" name="rol">
+            <option value="aprendiz">Aprendiz</option>
+            <option value="instructor">Instructor</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+    
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Crear Cuenta</button>
+        </div>
+    
+      </form>
+    </div>
+    
+
+
+    <script>
+        // Validación básica del formulario
+        document.getElementById('registroForm').onsubmit = function(event) {
+            const contraseña = document.getElementById('contraseña').value;
+            const confirmarContraseña = document.getElementById('confirmar-contraseña').value;
+
+            if (contraseña !== confirmarContraseña) {
+                alert('Las contraseñas no coinciden.');
+                event.preventDefault();
+            }
+        };
+
+    //permitir solo números en el campo de celular    
+    document.getElementById("celular").addEventListener("input", function () {
+        if (this.value.length > 10) {
+            alert("El número de celular debe tener máximo 10 dígitos.");
+            this.value = this.value.slice(0, 10); // recorta automáticamente
+        }
+    });
+
+
+    </script>
+
+</body>
+</html>

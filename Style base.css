@@ -1,0 +1,343 @@
+
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+a {
+color: rgb(214, 48, 48); /* Color del enlace */
+text-decoration: underline; /* Subrayado por defecto */
+}
+
+a:hover {
+color: rgb(198, 36, 36); /* Color al pasar el mouse */
+text-decoration: none; /* Sin subrayado al pasar el mouse */
+}
+
+
+/* Tema oscuro */
+body.tema-oscuro {
+    background-color: #0e0e0e;
+    color: #ffffff;
+}
+
+/* Variables para tema claro y oscuro */
+:root {
+--fondo-claro: #ffffff;
+--fondo-oscuro: #0e0e0e;
+--texto-primario: #555;
+--texto-secundario: #888;
+--tarjeta-clara: #f9f9f9;
+--tarjeta-oscura: #1e1e1e;
+}
+
+body.tema-oscuro {
+--texto-primario: #e0e0e0;
+--texto-secundario: #b3b3b3;
+--tarjeta-clara: #1e1e1e;
+--tarjeta-oscura: #333;
+}
+
+/* Estilos principales */
+.contenido-principal {
+padding: 0px;
+background: var(--fondo-claro);
+transition: background 0.3s, color 0.3s;
+}
+
+body.tema-oscuro .contenido-principal {
+background: var(--fondo-oscuro);
+}
+
+/* Tarjetas */
+.tarjeta {
+background: var(--tarjeta-clara);
+color: var(--texto-primario);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin: 15px;
+padding: 20px;
+max-width: 300px;
+text-align: center;
+transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+body.tema-oscuro .tarjeta {
+background: var(--tarjeta-oscura);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-icono {
+border-radius: 50%;
+margin-bottom: 15px;
+width: 100px;
+height: 100px;
+}
+
+
+
+.tarjeta2-icono {
+display: flex; /* Para que el contenido esté en fila */
+align-items: center; /* Centra verticalmente texto e imagen */
+margin-bottom: 10px; 
+border-radius: 50%;
+margin-bottom: 15px;
+width: 100px;
+height: 100px;
+margin-right: 10px;
+}
+
+
+
+/* Fondo desenfocado */
+body.fondo-desenfocado #contenido {
+    filter: blur(5px);
+    transition: filter 0.3s;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    .logo{
+        top: 50px;
+        left: 10px;
+        transform: translateX(-50%);
+    }
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Estilo hover para el enlace del menú */
+nav ul li a:hover {
+    background-color: rgb(0, 0, 0);
+    color: #28a745;
+}
+
+
+
+/* Usar <pre> con fuente Arial para la descripción */
+#contenido-principal pre {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+#formulario-login {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e1e1e1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: black;
+    z-index: 1000;
+}
+
+/* Tema oscuro para el formulario */
+body.tema-oscuro #formulario-login {
+    background-color: #121212;
+    color: white;
+}
+
+#formulario-login h2 {
+    margin-top: 0;
+}
+
+#formulario-login label {
+    display: block;
+    margin-top: 10px;
+}
+
+#formulario-login input,
+#formulario-login select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Estilos de los botones de Ingresar y Cancelar */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.form-buttons button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Botón de tema claro */
+.form-buttons .btn-ingresar {
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Botón de tema claro en hover */
+.form-buttons .btn-ingresar:hover {
+    background-color: #34d058;
+}
+
+/* Botón de cancelar */
+.form-buttons .btn-cancelar {
+    background-color: #6c757d;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Botón de cancelar en hover */
+.form-buttons .btn-cancelar:hover {
+    background-color: #868e96;
+}
+
+/* Tema oscuro - ajustar colores de los botones */
+body.tema-oscuro .form-buttons .btn-ingresar {
+    background-color: #218838;
+    color: white;
+}
+
+body.tema-oscuro .form-buttons .btn-ingresar:hover {
+    background-color: #1e7e34;
+}
+
+body.tema-oscuro .form-buttons .btn-cancelar {
+    background-color: #495057;
+    color: white;
+}
+
+body.tema-oscuro .form-buttons .btn-cancelar:hover {
+    background-color: #343a40;
+}
+
+/* Botón para cambiar tema */
+.boton-tema {
+    position:fixed ;
+    top: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.boton-tema:hover {
+    background-color: #099d5d;
+}
+
+/* Enlace más contrastado */
+.enlace-creacion-cuenta a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Tema oscuro - enlace contrastado */
+body.tema-oscuro .enlace-creacion-cuenta a {
+    color: #66c2ff;
+}
+
+.logo {
+    display: flex;
+    height: 30px;
+}
+#formulario-contacto {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e1e1e1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: black;
+    z-index: 1000;
+}
+#formulario-contacto{
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 90%; /* Se adapta a pantallas pequeñas */
+max-width: 500px; /* Máximo ancho para pantallas grandes */
+max-height: 90%; /* Para que el formulario no ocupe más del 90% de la pantalla */
+background-color: var(--tarjeta-clara);
+color: var(--texto-primario);
+overflow-y: auto; /* Habilita desplazamiento si el contenido es largo */
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+z-index: 1000;
+}
+
+body.tema-oscuro #formulario-contacto, body.tema-oscuro #formulario-login {
+background-color: var(--tarjeta-oscura);
+color: var(--texto-primario);
+}
+
+/* Mejora los botones dentro de los formularios */
+
+
+
+
+body.tema-oscuro #formulario-contacto {
+    background-color: #121212;
+    color: white;
+}
+
+.logoPrincipal {
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+button {
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
